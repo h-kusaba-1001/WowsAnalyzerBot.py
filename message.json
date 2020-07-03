@@ -1,0 +1,6 @@
+{
+    "CONTENTS_EXIST": "ありますねぇ！",
+    "CONTENTS_NOT_EXIST": "(%s)ないです。",
+    "RANKING": "第%s位",
+    "ERROR_OCCURED_TRY_AGAIN": "エラー発生。もう一回言ってね。"
+}
