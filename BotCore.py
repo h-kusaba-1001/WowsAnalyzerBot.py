@@ -4,11 +4,14 @@ import random
 import urllib.error
 import urllib.request
 import json
-import auth
 # from pprint import pprint
 from discord.ext import commands
 import os
 import traceback
+
+# IMPORT FROM OTHER .py FILES
+import auth
+import config
 
 INITIAL_EXTENSIONS = [
     'cogs.PlayerCog'
@@ -35,8 +38,7 @@ class BotCore(commands.Bot):
         print(self.user.id)
         print('-----')
 
-
 # MyBotのインスタンス化及び起動処理。
 if __name__ == '__main__':
-    bot = BotCore(command_prefix='-') # command_prefixはコマンドの最初の文字として使うもの。 e.g. !ping
-    bot.run(auth.DISCORD_TOKEN) # Botのトークン
+    bot = BotCore(command_prefix=config.COMMAND_PREFIX)
+    bot.run(auth.DISCORD_TOKEN)

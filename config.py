@@ -10,8 +10,20 @@ class _config:
         if(path.exists("config.yaml")):
             with open('config.yaml', 'r') as config_yaml:
                 config = yaml.load(config_yaml, Loader=yaml.SafeLoader)
+                region = config['REGION']
+
                 for c in config:
-                    self.__dict__[c] = config[c]
+                    if(not c.endswith('WOWS_API_URL')): # API URL以外
+                        self.__dict__[c] = config[c]
+
+                    else: # Wows APIのURLはRegion別に加工しておく
+
+                        if(region is not 'na'):
+                            region_str = '.' + region
+                        else:
+                            region_str = '.com'
+                        self.__dict__[c] = config[c].format(region_str = region_str)
+
 
     class ConstError(TypeError):
         pass
