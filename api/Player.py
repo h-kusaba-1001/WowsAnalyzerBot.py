@@ -1,13 +1,12 @@
 """
 APIを取得し、使用しやすいdict型で結果を返す
-プレイヤーを返す
+アカウントIDとプレイヤー名を返す
 """
 import requests
 
 # IMPORT FROM OTHER .py FILES
 import auth
 import config
-from pprint import pprint
 
 class Player(object):
 

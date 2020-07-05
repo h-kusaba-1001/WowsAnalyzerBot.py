@@ -1,12 +1,6 @@
 # インストールした discord.py を読み込む
 import discord
-import random
-import urllib.error
-import urllib.request
-import json
-# from pprint import pprint
 from discord.ext import commands
-import os
 import traceback
 
 # IMPORT FROM OTHER .py FILES

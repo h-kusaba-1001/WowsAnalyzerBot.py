@@ -8,7 +8,6 @@ import requests
 import auth
 import config
 from math import ceil
-import datetime
 import util.util as util
 
 class Stats(object):
