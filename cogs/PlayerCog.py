@@ -58,6 +58,14 @@ class PlayerCog(commands.Cog):
         pvp_data = data['statistics']['pvp']
 
         pvp_battles = pvp_data['battles']
+
+        # 戦闘回数0回のプレイヤーは0除算を起こすため、ここで返す
+        # TODO:綺麗にする
+        if(pvp_battles is 0):
+            msg = '{}は戦闘回数0回のプレイヤーです'.fomat(nickname)
+            await ctx.send(msg)
+            return;
+
         pvp_wins = pvp_data['wins']
         pvp_survived_battles = pvp_data['survived_battles']
         pvp_damage_dealt = pvp_data['damage_dealt']
