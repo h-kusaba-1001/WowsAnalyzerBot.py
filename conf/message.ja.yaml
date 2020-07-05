@@ -1,0 +1,12 @@
+player_not_exists: "プレイヤーが存在しません"
+players_stats_hidden_profile: "戦績非公開のプレイヤーです"
+
+# Stats
+stats: "プレイヤー名： {nickname} \n
+戦闘数： {pvp_battles} \n
+勝率： {win_rate:.2f} \n
+平均与ダメ： {damage_rate:d} \n
+生存率： {survived_rate:.2f} \n
+戦績更新日時： {stats_updated_at} \n
+※PVPの戦績のみを表示しています。"
+

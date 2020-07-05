@@ -7,6 +7,7 @@ import datetime
 # IMPORT FROM OTHER .py FILES
 import auth
 import config
+import conf.message as message
 
 # コグとして用いるクラスを定義。
 class PlayerCog(commands.Cog):
@@ -30,8 +31,7 @@ class PlayerCog(commands.Cog):
 
         if(not jsonData['data']):
             # アカウント名がないので返す
-            await ctx.send('ないです')
-            pprint(jsonData['data'])
+            await ctx.send(message.player_not_exists)
             return;
         else:
             account_id = jsonData['data'][0]['account_id']
@@ -48,7 +48,7 @@ class PlayerCog(commands.Cog):
         data = jsonData['data'][str(account_id)]
 
         if(data['hidden_profile'] is True):
-            await ctx.send('戦績が非公開のユーザです')
+            await ctx.send(message.players_stats_hidden_profile)
             return;
 
         stats_updated_at = datetime.datetime.fromtimestamp(data['stats_updated_at'], datetime.timezone(datetime.timedelta(hours=config.TIMEZONE_HOURS)))
@@ -65,14 +65,7 @@ class PlayerCog(commands.Cog):
         survived_rate = round(pvp_survived_battles * 100 / pvp_battles, 2)
         damage_rate = ceil(pvp_damage_dealt / pvp_battles)
 
-        comment = '\
-        プレイヤー名： {nickname} \n\
-戦闘数： {pvp_battles} \n\
-勝率： {win_rate:.2f} \n\
-平均与ダメ： {damage_rate:d} \n\
-生存率： {survived_rate:.2f} \n\
-戦績更新日時： {stats_updated_at} \n\
-※PVPの戦績のみを表示しています。'.format(
+        comment = message.stats.format(
             nickname=nickname,
             pvp_battles=pvp_battles,
             win_rate=win_rate,
