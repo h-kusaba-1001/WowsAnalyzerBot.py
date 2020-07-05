@@ -10,3 +10,7 @@ stats: "プレイヤー名： {nickname} \n
 戦績更新日時： {stats_updated_at} \n
 ※PVPの戦績のみを表示しています。"
 
+
+
+# Error
+player_name.length_error: "プレイヤー名は{length}文字以内で入力してください"

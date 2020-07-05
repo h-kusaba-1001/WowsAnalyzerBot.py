@@ -8,6 +8,7 @@ import datetime
 import auth
 import config
 import conf.message as message
+import api.Player
 
 # コグとして用いるクラスを定義。
 class PlayerCog(commands.Cog):
@@ -19,11 +20,11 @@ class PlayerCog(commands.Cog):
     @commands.command(aliases=['p'])
     async def player(self, ctx, player_name: str):
 
-        players_get_parameters = {
-            'application_id': auth.WARGAMING_APP_TOKEN,
-            'search': player_name,
-            'limit': 1
-        }
+        # API側の仕様により、プレイヤー名は24文字以内とする
+        if(len(player_name) > config.API_PLAYER_NAME_LENGTH):
+            err_msg = message.player_name.length_error.format(length=config.API_PLAYER_NAME_LENGTH)
+            await ctx.send(err_msg)
+            return;
 
         # プレイヤー名を使用し、APIからアカウントIDを含むdictを取得する
         result = api.Player.search_by_player_name(player_name)

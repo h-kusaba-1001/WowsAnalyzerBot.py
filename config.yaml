@@ -6,3 +6,5 @@ COMMAND_PREFIX: '-'
 REGION: 'asia' # ru, eu, na, asia
 PLAYERS_WOWS_API_URL: "https://api.worldofwarships{region_str}/wows/account/list/"
 PERSONAL_DATA_WOWS_API_URL: 'https://api.worldofwarships.asia/wows/account/info/'
+
+API_PLAYER_NAME_LENGTH: 24
