@@ -7,9 +7,9 @@ import requests
 # IMPORT FROM OTHER .py FILES
 import auth
 import config
-from pprint import pprint
 from math import ceil
 import datetime
+import util.util as util
 
 class Stats(object):
 
@@ -33,8 +33,7 @@ class Stats(object):
         # APIの結果とは別に、dict型のresultを作成し、そのままメッセージに使用できるようにする
         result['nickname'] = data['nickname']
         result['hidden_profile'] = data['hidden_profile']
-        result['stats_updated_at'] = datetime.datetime.fromtimestamp(data['stats_updated_at'], datetime.timezone(datetime.timedelta(hours=config.TIMEZONE_HOURS)))
-
+        result['stats_updated_at'] = util.timestamp_format(data['stats_updated_at'])
 
         # 戦績非公開の場合は、勝率等の計算を行わない
         if(data['hidden_profile'] is False):
@@ -48,9 +47,9 @@ class Stats(object):
                 pvp_survived_battles = pvp_data['survived_battles']
                 pvp_damage_dealt = pvp_data['damage_dealt']
 
-                result['win_rate'] = round(pvp_wins * 100 / result['pvp_battles'], 2)
-                result['survived_rate'] = round(pvp_survived_battles * 100 / result['pvp_battles'], 2)
-                result['damage_rate'] = ceil(pvp_damage_dealt / result['pvp_battles'])
+                result['win_rate'] = util.calc_rate(pvp_wins, result['pvp_battles'])
+                result['survived_rate'] = util.calc_rate(pvp_survived_battles, result['pvp_battles'])
+                result['average_damage'] = ceil(pvp_damage_dealt / result['pvp_battles']) # 小数点以下切り上げ
 
         return result
 
