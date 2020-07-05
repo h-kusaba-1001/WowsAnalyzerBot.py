@@ -1,5 +1,4 @@
 player_not_exists: "プレイヤーが存在しません"
-players_stats_hidden_profile: "戦績非公開のプレイヤーです"
 
 # Stats
 stats: "プレイヤー名： {nickname} \n
@@ -8,9 +7,13 @@ stats: "プレイヤー名： {nickname} \n
 平均与ダメ： {damage_rate:d} \n
 生存率： {survived_rate:.2f} \n
 戦績更新日時： {stats_updated_at} \n
-※PVPの戦績のみを表示しています。"
+※PVPの戦績のみを表示しています"
 
+stats_hidden_profile: "プレイヤー名： {nickname} \n
+戦績非公開のプレイヤーです"
 
+stats_zero_battles: "プレイヤー名： {nickname} \n
+戦闘回数０回のプレイヤーです"
 
 # Error
 player_name_length_error: "プレイヤー名は{length}文字以内で入力してください"
