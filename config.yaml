@@ -1,4 +1,7 @@
 COMMAND_PREFIX: '-'
+TIMEZONE_HOURS: 9
+TIMEZONE_STR: '日本標準時(UTC+0900)'
 
 REGION: 'asia' # ru, eu, na, asia
 PLAYERS_WOWS_API_URL: "https://api.worldofwarships{region_str}/wows/account/list/"
+PERSONAL_DATA_WOWS_API_URL: 'https://api.worldofwarships.asia/wows/account/info/'
