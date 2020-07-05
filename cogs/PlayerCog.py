@@ -22,7 +22,7 @@ class PlayerCog(commands.Cog):
 
         # API側の仕様により、プレイヤー名は24文字以内とする
         if(len(player_name) > config.API_PLAYER_NAME_LENGTH):
-            err_msg = message.player_name.length_error.format(length=config.API_PLAYER_NAME_LENGTH)
+            err_msg = message.player_name_length_error.format(length=config.API_PLAYER_NAME_LENGTH)
             await ctx.send(err_msg)
             return;
 
@@ -62,7 +62,7 @@ class PlayerCog(commands.Cog):
         # 戦闘回数0回のプレイヤーは0除算を起こすため、ここで返す
         # TODO:綺麗にする
         if(pvp_battles is 0):
-            msg = '{}は戦闘回数0回のプレイヤーです'.fomat(nickname)
+            msg = '{}は戦闘回数0回のプレイヤーです'.format(nickname)
             await ctx.send(msg)
             return;
 

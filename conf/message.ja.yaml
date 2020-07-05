@@ -13,4 +13,4 @@ stats: "プレイヤー名： {nickname} \n
 
 
 # Error
-player_name.length_error: "プレイヤー名は{length}文字以内で入力してください"
+player_name_length_error: "プレイヤー名は{length}文字以内で入力してください"
