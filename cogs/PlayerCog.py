@@ -25,16 +25,16 @@ class PlayerCog(commands.Cog):
             'limit': 1
         }
 
-        res = requests.get(config.PLAYERS_WOWS_API_URL, params=players_get_parameters)
+        # プレイヤー名を使用し、APIからアカウントIDを含むdictを取得する
+        result = api.Player.search_by_player_name(player_name)
 
-        jsonData = res.json()
-
-        if(not jsonData['data']):
-            # アカウント名がないので返す
+        if(not result):
+            # resultが空の場合、アカウント名が取得できなかったので返す
             await ctx.send(message.player_not_exists)
             return;
         else:
-            account_id = jsonData['data'][0]['account_id']
+            #TODO: 検索結果に対し、対話形式で戦績検索アカウントを選択したい
+            account_id = result[0]['account_id']
 
         personal_data_get_parameters = {
             'application_id': auth.WARGAMING_APP_TOKEN,
