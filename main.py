@@ -2,10 +2,11 @@
 import discord
 from discord.ext import commands
 import traceback
+import keyword
 
 # IMPORT FROM OTHER .py FILES
-import auth
-import config
+import conf.auth as auth
+import conf.config as config
 
 INITIAL_EXTENSIONS = [
     'cogs.PlayerCog'
@@ -34,5 +35,6 @@ class BotCore(commands.Bot):
 
 # MyBotのインスタンス化及び起動処理。
 if __name__ == '__main__':
+    print(config.COMMAND_PREFIX)
     bot = BotCore(command_prefix=config.COMMAND_PREFIX)
     bot.run(auth.DISCORD_TOKEN)

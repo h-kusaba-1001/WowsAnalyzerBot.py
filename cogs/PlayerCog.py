@@ -5,8 +5,8 @@ from math import ceil
 import datetime
 
 # IMPORT FROM OTHER .py FILES
-import auth
-import config
+import conf.auth as auth
+import conf.config as config
 import conf.message as message
 import api.Player
 import api.Stats

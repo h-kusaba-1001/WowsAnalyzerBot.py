@@ -1,4 +1,4 @@
-import config
+import conf.config as config
 import datetime
 
 class _util(object):

@@ -5,8 +5,8 @@ APIを取得し、使用しやすいdict型で結果を返す
 import requests
 
 # IMPORT FROM OTHER .py FILES
-import auth
-import config
+import conf.auth as auth
+import conf.config as config
 
 class Player(object):
 

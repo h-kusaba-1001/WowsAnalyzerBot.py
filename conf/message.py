@@ -4,7 +4,7 @@ import configの後に読み込む
 """
 import yaml
 from os import path
-import config
+import conf.config as config
 
 class _message:
 

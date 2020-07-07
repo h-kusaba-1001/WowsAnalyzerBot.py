@@ -3,11 +3,11 @@ APIを取得し、使用しやすいdict型で結果を返す
 アカウントIDを用いて、PVP戦績を取得して返す
 """
 import requests
+from math import ceil
 
 # IMPORT FROM OTHER .py FILES
-import auth
-import config
-from math import ceil
+import conf.auth as auth
+import conf.config as config
 import util.util as util
 
 class Stats(object):
