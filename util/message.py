@@ -10,7 +10,7 @@ class _message:
 
     def __init__(self):
         # config.LANGUAGEからyamlファイル名を作成
-        yaml_path = 'conf/message.{lang}.yaml'.format(lang=config.LANGUAGE)
+        yaml_path = 'util/message.{lang}.yaml'.format(lang=config.LANGUAGE)
 
         if(path.exists(yaml_path)):
             with open(yaml_path, 'r', encoding="utf-8_sig") as message_yaml:

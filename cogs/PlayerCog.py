@@ -7,7 +7,7 @@ import datetime
 # IMPORT FROM OTHER .py FILES
 import conf.auth as auth
 import conf.config as config
-import conf.message as message
+import util.message as message
 import api.Player
 import api.Stats
 
