@@ -8,10 +8,6 @@ import keyword
 import conf.auth as auth
 import conf.config as config
 
-INITIAL_EXTENSIONS = [
-    'cogs.PlayerCog'
-]
-
 # クラスの定義。ClientのサブクラスであるBotクラスを継承。
 class BotCore(commands.Bot):
 
@@ -20,7 +16,7 @@ class BotCore(commands.Bot):
         # スーパークラスのコンストラクタに値を渡して実行。
         super().__init__(command_prefix)
 
-        for cog in INITIAL_EXTENSIONS:
+        for cog in config.cogs:
             try:
                 self.load_extension(cog)
             except Exception:
