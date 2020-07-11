@@ -26,7 +26,7 @@ class _auth:
             for A in AUTH_VALIABLE_NAMES:
                 if(A in environ): # 環境変数にある場合
                     # 本番環境の環境変数をセット
-                    self.__dict__[a] = environ[a]
+                    self.__dict__[A] = environ[A]
 
     class ConstError(TypeError):
         pass
