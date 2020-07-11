@@ -1,6 +1,5 @@
 from discord.ext import commands
 import requests
-from pprint import pprint
 from math import ceil
 import datetime
 

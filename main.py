@@ -24,10 +24,7 @@ class BotCore(commands.Bot):
 
     # Botの準備完了時に呼び出されるイベント
     async def on_ready(self):
-        print('-----')
-        print(self.user.name)
-        print(self.user.id)
-        print('-----')
+        print('Ready!')
 
 # MyBotのインスタンス化及び起動処理。
 if __name__ == '__main__':
