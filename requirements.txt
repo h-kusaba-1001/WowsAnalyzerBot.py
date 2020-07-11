@@ -4,4 +4,4 @@ requests==2.23.0
 requests-toolbelt==0.9.1
 websockets==8.1
 yarl==1.4.2
-yaml==0.2.5
+pyyaml==5.3.1
