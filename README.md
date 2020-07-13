@@ -40,6 +40,7 @@
 
 初期状態では、UTC+0900を設定しています。
 `conf.config.py`内でタイムゾーンをconf内のdictに設定し、`util/util.py`内のメソッド`timestamp_format`で使用しています。
+`TIMEZONE_STR`も同様のメソッド内で文字列結合に使用しています。
 
 * **(WIP)** 言語設定
 `LANGUAGE: 'ja'`

@@ -1,5 +1,6 @@
 LANGUAGE: 'ja'
 TIMEZONE_HOURS: 9
+TIMEZONE_STR: 'UTC+0900'
 
 COMMAND_PREFIX: '-'
 REGION: 'asia' # ru, eu, na, asia
