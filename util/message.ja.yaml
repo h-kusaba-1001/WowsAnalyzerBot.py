@@ -1,3 +1,4 @@
+player_missing_arguments: "プレイヤー名を入力してください。"
 player_not_exists: "プレイヤーが存在しません"
 
 # Stats
