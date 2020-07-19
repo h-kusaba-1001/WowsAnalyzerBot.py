@@ -17,10 +17,13 @@ class BotCore(commands.Bot):
         super().__init__(command_prefix)
 
         for cog in config.cogs:
-            try:
-                self.load_extension(cog)
-            except Exception:
-                traceback.print_exc()
+            self.load_extension(cog)
+
+            # 例外処理を握り潰さない
+            # try:
+            #     self.load_extension(cog)
+            # except Exception:
+            #     traceback.print_exc()
 
     # Botの準備完了時に呼び出されるイベント
     async def on_ready(self):

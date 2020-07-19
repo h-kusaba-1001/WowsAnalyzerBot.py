@@ -49,5 +49,12 @@ class PlayerCog(commands.Cog):
         # 検索結果ごとに作成したメッセージを返す
         await ctx.send(msg)
 
+
+    # playerコマンドの引数が存在しない場合、エラーメッセージを返す
+    @player.error
+    async def missingArgument(self, ctx, error):
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send(message.player_missing_arguments)
+
 def setup(bot):
     bot.add_cog(PlayerCog(bot))
