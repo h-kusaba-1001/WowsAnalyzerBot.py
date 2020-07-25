@@ -21,7 +21,7 @@ class _config:
 
                 else: # Wows APIのURLはRegion別に加工しておく
 
-                    if(region is not 'na'):
+                    if(region != 'na'):
                         region_str = '.' + region
                     else:
                         region_str = '.com'

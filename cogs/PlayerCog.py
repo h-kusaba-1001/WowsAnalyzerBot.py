@@ -40,7 +40,7 @@ class PlayerCog(commands.Cog):
 
         if(result_stats['hidden_profile'] is True): # 戦績非公開
             msg = message.stats_hidden_profile.format(**result_stats)
-        elif(result_stats['pvp_battles'] is 0): # 戦闘回数0回のプレイヤーはゼロ除算を起こすため、ここで返す
+        elif(result_stats['pvp_battles'] == 0): # 戦闘回数0回のプレイヤーはゼロ除算を起こすため、ここで返す
             msg = message.stats_zero_battles.format(**result_stats)
         else:
             # 検索結果をメッセージで返す
